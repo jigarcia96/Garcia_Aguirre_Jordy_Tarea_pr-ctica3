@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        
+        .menu {
+            background-color: #333;
+            padding: 10px;
+            display: inline-block;
+        }
+        
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu-item {
+            display: inline-block;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .submenu {
+            display: none;
+            background-color: #555;
+            position: absolute;
+            z-index: 1;
+            padding: 10px;
+        }
+        
+        .submenu li {
+            padding: 10px;
+        }
+        
+        .submenu li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .submenu li:hover {
+            background-color: #777;
+        }
+    </style>
+    <title>Menú Desplegable</title>
+</head>
+
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li class="menu-item" onclick="toggleSubMenu('submenu1')">Inicio
+                <ul class="submenu" id="submenu1">
+                    <li><a href="#">Inicio 1</a></li>
+                    <li><a href="#">Inicio 2</a></li>
+                    <li><a href="#">Inicio 3</a></li>
+                </ul>
+            </li>
+            <li class="menu-item" onclick="toggleSubMenu('submenu2')">Categoría
+                <ul class="submenu" id="submenu2">
+                    <li><a href="#">Categoria 1</a></li>
+                    <li><a href="#">Categoria 2</a></li>
+                    <li><a href="#">Categoria 3</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">Contacto</li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleSubMenu(submenuId) {
+            var submenu = document.getElementById(submenuId);
+            submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+
+</html>
